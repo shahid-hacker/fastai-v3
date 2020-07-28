@@ -67,7 +67,7 @@ async def analyze(request):
     breed = str(prediction)
     breed = breed.replace("_"," ")
     breed = breed.capitalize()
-    return JSONResponse({'Your pet is a': breed})
+    return JSONResponse({"Your pet is a": breed})
 
 
 if __name__ == '__main__':
