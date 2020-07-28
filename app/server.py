@@ -65,9 +65,9 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
     breed = str(prediction)
-    breed.replace("_"," ")
-    breed.capitalize()
-    return JSONResponse({'result': breed})
+    breed = breed.replace("_"," ")
+    breed = breed.capitalize()
+    return JSONResponse({'Your pet is a': breed})
 
 
 if __name__ == '__main__':
