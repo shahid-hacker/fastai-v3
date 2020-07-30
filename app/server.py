@@ -69,9 +69,9 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
     breed = str(prediction)
-    if (breed in cats)
+    if breed in cats:
            animal = cat
-    else
+    else:
            animal = dog
     breed = breed.replace("_"," ")
     breed = breed.capitalize()
