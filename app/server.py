@@ -16,6 +16,10 @@ classes = ['Abyssinian','Bengal','Birman','Bombay','British_Shorthair','Egyptian
            'american_pit_bull_terrier','basset_hound','beagle','boxer','chihuahua','english_cocker_spaniel','english_setter','german_shorthaired','great_pyrenees',
            'havanese','japanese_chin','keeshond','leonberger','miniature_pinscher', 'newfoundland','pomeranian','pug','saint_bernard','samoyed','scottish_terrier',
            'shiba_inu','staffordshire_bull_terrier', 'wheaten_terrier','yorkshire_terrier']
+cats = {'Abyssinian','Bengal','Birman','Bombay','British_Shorthair','Egyptian_Mau','Maine_Coon','Persian','Ragdoll','Russian_Blue','Siamese','Sphynx'}
+dogs = {'american_bulldog','american_pit_bull_terrier','basset_hound','beagle','boxer','chihuahua','english_cocker_spaniel','english_setter','german_shorthaired','great_pyrenees',
+        'havanese','japanese_chin','keeshond','leonberger','miniature_pinscher', 'newfoundland','pomeranian','pug','saint_bernard','samoyed','scottish_terrier',
+        'shiba_inu','staffordshire_bull_terrier', 'wheaten_terrier','yorkshire_terrier'}
 path = Path(__file__).parent
 
 app = Starlette()
@@ -65,9 +69,14 @@ async def analyze(request):
     img = open_image(BytesIO(img_bytes))
     prediction = learn.predict(img)[0]
     breed = str(prediction)
+    if (breed in cats)
+           animal = cat
+    else
+           animal = dog
     breed = breed.replace("_"," ")
     breed = breed.capitalize()
-    return JSONResponse({"Your pet is a": breed})
+    
+    return JSONResponse({"Your ", animal," is a": breed})
 
 
 if __name__ == '__main__':
