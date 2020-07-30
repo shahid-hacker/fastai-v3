@@ -70,13 +70,13 @@ async def analyze(request):
     prediction = learn.predict(img)[0]
     breed = str(prediction)
     if breed in cats:
-           animal = cat
+           animal = "cat"
     else:
-           animal = dog
+           animal = "dog"
     breed = breed.replace("_"," ")
     breed = breed.capitalize()
     
-    return JSONResponse({"Your ", animal,"is a": breed})
+    return JSONResponse({"Your " + animal + "is a: " + breed})
 
 
 if __name__ == '__main__':
