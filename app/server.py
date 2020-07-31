@@ -73,8 +73,7 @@ async def analyze(request):
     else:
            animal = "dog"
     breed = str(prediction).replace("_"," ").capitalize()
-    final_result = "Your " + animal + "is a " + breed
-    
+    str(final_result) = "Your " + animal + "is a " + breed 
     return JSONResponse({'result': final_result})
 
 
